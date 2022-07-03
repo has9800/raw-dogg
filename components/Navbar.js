@@ -6,9 +6,9 @@ function Navbar() {
   const { query, setQuery } = useContext(SearchContext);
 
   return (
-    <div className="flex flex-row items-center justify-between p-4">
+    <div className="flex flex-row items-center justify-between p-8">
       <div>
-        <h1 className="text-sm font-bold tracking-wide">Rawdog Games</h1>
+        <h1 className="text-sm font-bold tracking-wide">Games</h1>
       </div>
       <div className="w-1/2">
         <input

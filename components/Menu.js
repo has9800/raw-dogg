@@ -2,12 +2,12 @@ import React from "react";
 
 function Menu() {
   return (
-    <div className="md:flex md:flex-col md:justify-start md:items-start hidden md:w-1/4 p-5">
+    <div className="md:flex md:flex-col md:justify-start md:items-start hidden md:w-1/2 md:p-5 md:mr-5">
       <div className="mb-5">
         <h1 className="text-3xl font-bold">New Releases 🎉</h1>
         <ul className="my-4">
           {["Last 30 Days", "This Week", "This Month"].map((item) => (
-            <li className="my-2 cursor-pointer" key={item}>
+            <li className="my-2 cursor-pointer font-light text-sm" key={item}>
               {item}
             </li>
           ))}
@@ -18,7 +18,7 @@ function Menu() {
         <ul className="my-4">
           {["Best of the year", "Popular 2021", "All time top 250"].map(
             (item) => (
-              <li className="my-2 cursor-pointer" key={item}>
+              <li className="my-2 cursor-pointer font-light text-sm" key={item}>
                 {item}
               </li>
             )
@@ -38,7 +38,7 @@ function Menu() {
             "Racing",
             "Sports",
           ].map((item) => (
-            <li className="my-2 cursor-pointer" key={item}>
+            <li className="my-2 cursor-pointer font-light text-sm" key={item}>
               {item}
             </li>
           ))}
