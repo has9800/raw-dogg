@@ -22,9 +22,13 @@ function Navbar() {
         />
       </div>
       <div className="px-3">
-        <h1 className="bg-gradient-to-b from-rose-500 to-rose-900 rounded-full p-2">
-          HA
-        </h1>
+        <button
+          type="button"
+          className="bg-gradient-to-b from-indigo-500 to-violet-900 rounded-md p-2 w-[80px]
+          hover:scale-105 hover:transition-all text-xs uppercase"
+        >
+          Login
+        </button>
       </div>
     </div>
   );

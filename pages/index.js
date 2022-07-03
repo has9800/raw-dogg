@@ -4,14 +4,14 @@ import { Layout, Navbar, Content } from "../components";
 export default function Home({ games }) {
   const test = "TEST";
 
-  useEffect(() => {
-    console.log(games.results);
-  }, []);
+  // useEffect(() => {
+  //   console.log(games.results);
+  // }, []);
 
   return (
     <Layout>
       <Navbar />
-      <Content />
+      <Content data={games.results} />
     </Layout>
   );
 }
@@ -19,7 +19,7 @@ export default function Home({ games }) {
 export async function getServerSideProps() {
   // const url = `https://api.rawg.io/api/games?key=${process.env.NEXT_PUBLIC_KEY}&page_size=10`;
   const res = await fetch(
-    `https://api.rawg.io/api/games?key=33270e8f024f4b0685fd782b29664761&page_size=10`
+    `https://api.rawg.io/api/games?key=33270e8f024f4b0685fd782b29664761&page_size=25`
   );
   const games = await res.json();
 
