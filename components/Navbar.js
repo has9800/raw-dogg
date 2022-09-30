@@ -1,9 +1,9 @@
 import { useContext } from "react";
-import { SearchContext } from "../context/SearchContext";
+import { useQuery } from "../context/SearchContext";
 // import { AiOutlineSearch } from "react-icons/ai";
 
 function Navbar() {
-  const { query, setQuery } = useContext(SearchContext);
+  const { query, setQuery } = useQuery();
 
   return (
     <div className="flex flex-row items-center justify-between p-8">

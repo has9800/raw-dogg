@@ -2,17 +2,39 @@
 import Menu from "./Menu";
 import GamesList from "./GamesList";
 import SmGameCard from "./SmGameCard";
+import { useEffect, useState } from "react";
+import { useQuery } from "../context/SearchContext";
 
-function Content({ data }) {
-  console.log(data);
+function Content() {
+  const [games, setGames] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
+
+  const { query } = useQuery();
+
+  const fetchData = async () => {
+    setLoading(true);
+
+    await fetch("/api/games")
+      .then((res) => res.json())
+      .then((data) => setGames(data.results))
+      .catch((err) => setError(err))
+      .finally(() => setLoading(false));
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error loading page...</p>;
+
   return (
-    <div className="flex flex-row items-start text-white max-h-screen p-5">
-      {/* <h1 className="border-r-white bg-slate-500 h-screen hidden md:block md:w-1/3">
-        Menu
-      </h1> */}
+    <div className="flex flex-row text-white p-5">
+      {console.log(query)}
       <Menu />
       <GamesList>
-        {data?.map((game) => (
+        {games?.map((game) => (
           <div key={game.id}>
             <SmGameCard
               title={game.name}
