@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useContext } from "react";
 
 export const SearchContext = createContext();
 
@@ -13,3 +13,4 @@ function SearchContextWrappert({ children }) {
 }
 
 export default SearchContextWrappert;
+export const useQuery = () => useContext(SearchContext);

@@ -1,14 +1,14 @@
 import { useContext } from "react";
-import { SearchContext } from "../context/SearchContext";
+import { useQuery } from "../context/SearchContext";
 // import { AiOutlineSearch } from "react-icons/ai";
 
 function Navbar() {
-  const { query, setQuery } = useContext(SearchContext);
+  const { query, setQuery } = useQuery();
 
   return (
-    <div className="flex flex-row items-center justify-between p-4">
+    <div className="flex flex-row items-center justify-between p-8">
       <div>
-        <h1 className="text-sm font-bold tracking-wide">Rawdog Games</h1>
+        <h1 className="text-sm font-bold tracking-wide">Games</h1>
       </div>
       <div className="w-1/2">
         <input
@@ -20,11 +20,16 @@ function Navbar() {
           search-bg placeholder:text-sm placeholder:font-light
           focus:ring-[1px] focus:ring-white hover:transition-all font-light"
         />
+        {/* <AiOutlineSearch /> */}
       </div>
       <div className="px-3">
-        <h1 className="bg-gradient-to-b from-rose-500 to-rose-900 rounded-full p-2">
-          HA
-        </h1>
+        <button
+          type="button"
+          className="bg-gradient-to-b from-indigo-500 to-violet-900 rounded-md p-2 w-[80px]
+          hover:scale-105 hover:transition-all text-xs uppercase"
+        >
+          Login
+        </button>
       </div>
     </div>
   );

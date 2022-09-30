@@ -1,12 +1,31 @@
 // imports
+import Menu from "./Menu";
+import GamesList from "./GamesList";
+import SmGameCard from "./SmGameCard";
+import { useQuery } from "../context/SearchContext";
+import { useGames } from "../custom_hooks/useGames";
 
 function Content() {
+  const { query } = useQuery();
+  const { loading, error, games } = useGames();
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error loading page...</p>;
+
   return (
-    <div className="flex flex-row items-center overflow-hidden text-white">
-      <h1 className="border-r-white bg-slate-500 h-screen hidden md:block md:w-1/3">
-        Menu
-      </h1>
-      <h1 className="bg-neutral-800 w-full h-screen">Games</h1>
+    <div className="flex flex-row text-white p-5">
+      <Menu />
+      <GamesList>
+        {games?.map((game) => (
+          <div key={game.id}>
+            <SmGameCard
+              title={game.name}
+              bgImg={game.background_image}
+              rating={game.rating}
+            />
+          </div>
+        ))}
+      </GamesList>
     </div>
   );
 }
