@@ -1,4 +1,4 @@
-/* eslint-disable @next/next/no-img-element */
+import Image from "next/image";
 
 function SmGameCard({ bgImg, title, rating }) {
   return (
@@ -7,10 +7,11 @@ function SmGameCard({ bgImg, title, rating }) {
       hover:scale-105 cursor-pointer hover:ring-2 hover:ring-violet-500"
     >
       <div className="relative h-40 rounded-t-lg text-center">
-        <img
+        <Image
           src={bgImg}
           alt={title}
-          className="overflow-hidden h-full w-full rounded-t-lg"
+          layout="fill"
+          className="h-full w-full rounded-t-lg"
         />
       </div>
       <div className="h-20 p-5">

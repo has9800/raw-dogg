@@ -4,7 +4,7 @@ function GamesList({ children }) {
     <div className="w-full mx-auto md:w-full">
       <div className="flex flex-col items-center md:items-start p-5">
         <h1 className="text-5xl md:text-6xl font-bold">New & Trending</h1>
-        <p className="mt-3 text-neutral-400 text-sm">
+        <p className="mt-4 text-neutral-400 text-sm">
           New & trending games this month...
         </p>
       </div>

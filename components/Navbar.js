@@ -20,6 +20,7 @@ function Navbar() {
           search-bg placeholder:text-sm placeholder:font-light
           focus:ring-[1px] focus:ring-white hover:transition-all font-light"
         />
+        {/* <AiOutlineSearch /> */}
       </div>
       <div className="px-3">
         <button
