@@ -11,3 +11,14 @@ The two main points I wanted to try out are HTTP Cache-Headers, and proper clien
 I might add in a couple test cases. It has a lot of high re-usable modules and I tried to keep components as decoupled as possible, off to a great start and will continue to refactor. 
 
 The Lighthouse scores are also really good averaging `[99, 98, 99, 100]` on my local dev environment with the caching and Next.js' Image optimizations.
+
+## Try it out
+
+You can bring the repo down to your local machine, run `npm install`, and open up `localhost:3000`. 
+
+Click on 
+```bash
+inspect -> network -> 'games'
+```
+
+If you reload a few times, you should see `200 (local disk cache)` which means it's serving from the cache. In production, it serves from a ***public*** cache which is the default for Next.js/Vercel
