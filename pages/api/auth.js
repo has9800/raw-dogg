@@ -7,8 +7,15 @@ const auth = getAuth(app);
 export default async function handler(req, res) {
   switch (req.method) {
     case "GET":
-      return;
-      break;
+      try {
+        const q = query(collection(db, "users"), where("uid", "==", user?.uid));
+        const doc = await getDocs(q);
+        const data = doc.docs[0].data();
+
+        return res.status(200).json(data);
+      } catch (error) {
+        return res.status(400).send({ message: "FETCHING USER FAILED!" });
+      }
     case "POST":
       try {
         const name = req.body.name;
@@ -25,9 +32,9 @@ export default async function handler(req, res) {
 
         await addDoc(collection(db, "users"), {
           uid: usr.uid,
-          name,
+          displayName: name,
           authProvider: "local",
-          email: usr.email,
+          email,
         });
 
         return res.status(200).send({ message: "USER CREATED SUCCESSFULLY! " });
@@ -35,7 +42,5 @@ export default async function handler(req, res) {
         console.log(error.message);
         return res.status(400).send({ message: "USER NOT CREATED... " });
       }
-
-      break;
   }
 }

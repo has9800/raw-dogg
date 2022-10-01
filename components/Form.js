@@ -1,15 +1,9 @@
 import { useState } from "react";
 import { signInUser, signUserOut, signUpUser } from "../lib/firebaseHandler";
-// import { useFirebase } from "@/context/FirebaseContext";
-// import styles from "./form.module.scss";
-
 import { useRouter } from "next/router";
-// import { LockClosedIcon } from "@heroicons/react/20/solid";
-// import { IoLaptopSharp } from "react-icons/io5";
+import Link from "next/link";
 
 function Form({ formText, type, ...args }) {
-  //   const { signInUser, signUpUser } = useFirebase();
-
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -61,11 +55,18 @@ function Form({ formText, type, ...args }) {
           {type === "Signup" ? (
             <p className="mt-2 text-center text-sm">
               Or{" "}
-              <a href="#" className="font-medium">
+              <Link href="#" className="font-bold">
                 start your 14-day free trial
-              </a>
+              </Link>
             </p>
-          ) : null}
+          ) : (
+            <p className="mt-2 text-center text-sm">
+              Dont have an account?{" "}
+              <Link href="/signup" className="font-bold">
+                sign up here
+              </Link>
+            </p>
+          )}
         </div>
         <form
           className="mt-8 space-y-6"
@@ -148,7 +149,7 @@ function Form({ formText, type, ...args }) {
             <button
               onClick={handleForm}
               type="submit"
-              className="group relative flex w-full justify-center rounded-md border border-transparent py-2 px-4 text-sm font-medium text-white focus:outline-none focus:ring-2 focus:ring-offset-2"
+              className="group relative flex w-full justify-center rounded-md border border-transparent py-2 px-4 text-sm font-medium text-[#333] bg-white focus:outline-none focus:ring-2 focus:ring-offset-2"
             >
               {/* <span className="absolute inset-y-0 left-0 flex items-center pl-3">
                 <LockClosedIcon

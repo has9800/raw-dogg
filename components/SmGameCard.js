@@ -17,13 +17,14 @@ function SmGameCard({ bgImg, title, rating }) {
       <div className="h-20 p-5">
         <div className="flex flex-row justify-between items-start mb-3 -mt-3">
           <h1 className="text-sm font-bold tracking-wide">{title}</h1>
-          <p className="text-xs bg-gradient-to-b from-indigo-500 to-violet-800 rounded-md p-1">
+          <p className="text-xs bg-gradient-to-br from-indigo-500 to-violet-800 rounded-md p-1">
             {rating}
           </p>
         </div>
         <div className="flex flex-row justify-between items-start mt-5">
-          <h1 className="text-xs font-thin">PC - PS4 - PS5 - Xbox</h1>
-          {/* <p className="text-xs">{rating}</p> */}
+          <h1 className="text-xs font-bold text-neutral-500">
+            PC - PS4 - PS5 - Xbox
+          </h1>
         </div>
       </div>
     </div>
@@ -31,5 +32,3 @@ function SmGameCard({ bgImg, title, rating }) {
 }
 
 export default SmGameCard;
-
-// bg-gradient-to-b from-violet-500 to-indigo-700 to bg-purple-900

@@ -1,13 +1,15 @@
-// imports
 import Menu from "./Menu";
 import GamesList from "./GamesList";
 import SmGameCard from "./SmGameCard";
+
 import { useQuery } from "../context/SearchContext";
 import { useGames } from "../custom_hooks/useGames";
+import { useUser } from "../custom_hooks/useUser";
 
 function Content() {
   const { query } = useQuery();
   const { loading, error, games } = useGames();
+  const { loadingUser, user } = useUser();
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error loading page...</p>;

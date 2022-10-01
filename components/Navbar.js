@@ -1,9 +1,12 @@
-import { useContext } from "react";
 import { useQuery } from "../context/SearchContext";
-// import { AiOutlineSearch } from "react-icons/ai";
+import { useUser } from "../custom_hooks/useUser";
+import { signUserOut } from "../lib/firebaseHandler";
+import { useRouter } from "next/router";
 
 function Navbar() {
   const { query, setQuery } = useQuery();
+  const { user } = useUser();
+  const router = useRouter();
 
   return (
     <div className="flex flex-row items-center justify-between p-8">
@@ -20,16 +23,27 @@ function Navbar() {
           search-bg placeholder:text-sm placeholder:font-light
           focus:ring-[1px] focus:ring-white hover:transition-all font-light"
         />
-        {/* <AiOutlineSearch /> */}
       </div>
       <div className="px-3">
-        <button
-          type="button"
-          className="bg-gradient-to-b from-indigo-500 to-violet-900 rounded-md p-2 w-[80px]
+        {user ? (
+          <button
+            type="button"
+            onClick={() => signUserOut()}
+            className="bg-gradient-to-br from-indigo-500 to-violet-900 rounded-md p-2 w-[80px]
           hover:scale-105 hover:transition-all text-xs uppercase"
-        >
-          Login
-        </button>
+          >
+            Logout
+          </button>
+        ) : (
+          <button
+            type="button"
+            onClick={() => router.push("/login")}
+            className="bg-gradient-to-br from-indigo-500 to-violet-900 rounded-md p-2 w-[80px]
+          hover:scale-105 hover:transition-all text-xs uppercase"
+          >
+            Login
+          </button>
+        )}
       </div>
     </div>
   );

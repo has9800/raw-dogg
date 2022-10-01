@@ -11,7 +11,7 @@ export const useGames = () => {
 
     await fetch("/api/games")
       .then((res) => res.json())
-      .then((data) => setGames(data.results))
+      .then((data) => setGames(JSON.parse(data)))
       .catch((err) => setError(err))
       .finally(() => setLoading(false));
   };
@@ -26,6 +26,3 @@ export const useGames = () => {
     games,
   };
 };
-
-// fetch single game with query
-export const useGame = (query) => {};
