@@ -1,5 +1,4 @@
 function GamesList({ children }) {
-  const foo = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   return (
     <div className="w-full mx-auto md:w-full">
       <div className="flex flex-col items-center md:items-start p-5">
