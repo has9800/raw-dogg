@@ -1,34 +1,13 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# RawDog Games
 
-## Getting Started
+This is a Next.js gaming app project. It's fairly simple. It only shows 10 items on the homepage but it has functional authentication, data caching on the development environment and in production using **HTTP Cache-Headers** 
 
-First, run the development server:
+The reason why this project is very lightweight is because I focused less on what the end product would look like, and more on the code implementation to better show my technical depth when it comes to engineering frontend apps. There's a ton of things I could add but I dont want to over-engineer it.
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+<hr />
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The two main points I wanted to try out are HTTP Cache-Headers, and proper client side rendering using Next.js' built-in API routes. Performance and accessibility are things I'm working on as a developer and I'm currently implementing what I learned recently into this small project. Reducing server costs, API usage bills, and better user experience are thing's this technique could help.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+I might add in a couple test cases. It has a lot of high re-usable modules and I tried to keep components as decoupled as possible, off to a great start and will continue to refactor. 
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+The Lighthouse scores are also really good averaging `[99, 98, 99, 100]` on my local dev environment with the caching and Next.js' Image optimizations.
