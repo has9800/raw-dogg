@@ -1,6 +1,6 @@
 import { app, db } from "../../lib/firebase";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-import { collection, addDoc } from "firebase/firestore";
+import { collection, addDoc, getDocs } from "firebase/firestore";
 
 const auth = getAuth(app);
 
@@ -18,7 +18,7 @@ export default async function handler(req, res) {
       }
     case "POST":
       try {
-        const name = req.body.name;
+        const name = req.body.username;
         const email = req.body.email;
         const password = req.body.password;
 

@@ -4,7 +4,7 @@ function SmGameCard({ bgImg, title, rating }) {
   return (
     <div
       className="flex flex-col bg-neutral-800 m-5 rounded-lg w-80 hover:transition hover:ease-in-out 
-      hover:scale-105 cursor-pointer hover:ring-2 hover:ring-violet-500"
+      hover:scale-105 cursor-pointer hover:ring-2 hover:ring-violet-600"
     >
       <div className="relative h-40 rounded-t-lg text-center">
         <Image
