@@ -11,7 +11,7 @@ export const useGames = () => {
 
     await fetch("/api/games")
       .then((res) => res.json())
-      .then((data) => setGames(JSON.parse(data)))
+      .then((data) => setGames(data))
       .catch((err) => setError(err))
       .finally(() => setLoading(false));
   };

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { signInUser, signUserOut, signUpUser } from "../lib/firebaseHandler";
+import { signInUser, signUpUser } from "../lib/firebaseHandler";
 import { useRouter } from "next/router";
 import Link from "next/link";
 
@@ -7,6 +7,7 @@ function Form({ formText, type, ...args }) {
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState(false);
 
   const router = useRouter();
 
@@ -15,7 +16,9 @@ function Form({ formText, type, ...args }) {
 
     switch (type) {
       case "Signup":
-        signUpUser(name, email, password);
+        signUpUser(username, email, password).then(() =>
+          console.log("signup successful frm form")
+        );
 
         setEmail("");
         setUsername("");
@@ -24,7 +27,9 @@ function Form({ formText, type, ...args }) {
         router.push("/");
         break;
       case "Login":
-        signInUser(email, password);
+        signInUser(email, password).then(() =>
+          console.log("sign in successful frm form")
+        );
 
         setEmail("");
         setUsername("");

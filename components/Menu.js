@@ -8,7 +8,7 @@ function Menu() {
         <ul className="my-4">
           {["Last 30 Days", "This Week", "This Month"].map((item) => (
             <li
-              className="my-2 cursor-pointer font-light text-sm hover:text-indigo-400 hover:transition-all ease-in-out"
+              className="my-2 cursor-pointer font-light text-sm text-gray-400 hover:text-indigo-500 hover:transition-all ease-in-out"
               key={item}
             >
               {item}
@@ -22,7 +22,7 @@ function Menu() {
           {["Best of the year", "Popular 2021", "All time top 250"].map(
             (item) => (
               <li
-                className="my-2 cursor-pointer font-light text-sm hover:text-indigo-400 hover:transition-all ease-in-out"
+                className="my-2 cursor-pointer font-light text-sm text-gray-400 hover:text-indigo-500 hover:transition-all ease-in-out"
                 key={item}
               >
                 {item}
@@ -45,7 +45,7 @@ function Menu() {
             "Sports",
           ].map((item) => (
             <li
-              className="my-2 cursor-pointer font-light text-sm hover:text-indigo-400 hover:transition-all ease-in-out"
+              className="my-2 cursor-pointer font-light text-sm text-gray-400 hover:text-indigo-500 hover:transition-all ease-in-out"
               key={item}
             >
               {item}
