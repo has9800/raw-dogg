@@ -21,4 +21,4 @@ Click on
 inspect -> network -> 'games'
 ```
 
-If you reload a few times, you should see `200 (local disk cache)` under the `Headers` tab which means it's serving from the cache. In production, it serves from a ***public*** cache which is the default for Next.js/Vercel
+If you reload a few times, you should see `200 (from disk cache)` under the `Headers` tab which means it's serving from the cache. In production, it serves from a ***public*** cache which is the default for Next.js/Vercel
